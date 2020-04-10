@@ -1,5 +1,5 @@
-function compress (texto){
-	let i = 0;
+String.prototype.compress = function (){
+	let i = 0; texto  = String(this);
 	let incidencias = [];
 
 	// busqueda y conteo
@@ -29,6 +29,7 @@ function compress (texto){
 		texto = texto.replace( (new RegExp(e.char, 'g')), e.count);
 	})
 	incidencias = incidencias.map(e => e.char)
+	
 	return {compress : texto , incidencias }
 }
 
