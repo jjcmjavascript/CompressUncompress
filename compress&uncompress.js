@@ -33,10 +33,10 @@ String.prototype.compress = function (){
 	return {compress : texto , incidencias }
 }
 
-function uncompress (objecto){
-	let div = objecto.compress.split('1');
+Object.prototype.uncompress (){
+	let div = this.compress.split('1');
 	div = div.map(ele => {
-		return objecto.incidencias[ele.length];
+		return this.incidencias[ele.length];
 	})
 
 	return div.join('');
